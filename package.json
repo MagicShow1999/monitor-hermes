@@ -1,0 +1,24 @@
+{
+  "name": "monitor-hermes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "monitor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MagicShow1999/monitor-hermes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MagicShow1999/monitor-hermes/issues"
+  },
+  "homepage": "https://github.com/MagicShow1999/monitor-hermes#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "nodemailer": "^6.6.3",
+    "shelljs": "^0.8.4"
+  }
+}
