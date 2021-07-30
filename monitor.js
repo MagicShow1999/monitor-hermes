@@ -43,6 +43,7 @@ const monitor = () => {
   
 }
 
+console.log("Monitor app is running!!");
 
 if (!found) {
   setInterval(monitor, 60000);  
