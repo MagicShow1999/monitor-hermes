@@ -23,7 +23,7 @@ const monitor = () => {
 
     const mailOptions = {
       from: process.env.WHD_EMAIL,
-      to: process.env.WHD_EMAIL,
+      to: process.env.CFN_EMAIL,
       subject: '爱马仕补货通知！！',
       text: '快点链接! ' + process.env.HERMES_LINK
     };
