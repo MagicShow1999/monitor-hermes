@@ -5,15 +5,12 @@ require('dotenv').config();
 
 let found = false;
 const monitor = () => {
-  // shell.exec(`curl ${process.env.HERMES_LINK} \
-  //   -H 'user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36' \
-  //   -H 'accept-language: en-US,en;q=0.9' \
-  //   --compressed > out.txt`)
+  shell.exec(`curl ${process.env.HERMES_LINK} \
+    -H 'user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36' \
+    -H 'accept-language: en-US,en;q=0.9' \
+    --compressed > out.txt`)
 
-  // const code = shell.exec("grep -q \"We’re sorry. The page you were looking for no longer exists.\" out.txt");
-  // console.log(code.code);
-  const code = {};
-  code.code = 1;
+  const code = shell.exec("grep -q \"We’re sorry. The page you were looking for no longer exists.\" out.txt");
   if (code.code === 1) {
     
     const transporter = nodemailer.createTransport({
@@ -47,8 +44,15 @@ const monitor = () => {
 
 console.log("Monitor app is running!!");
 
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+}
+
 if (!found) {
-  setInterval(monitor, 10000);  
+  setInterval(monitor, 1000 * getRandomInt(40,80));  
 }
 
 
