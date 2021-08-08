@@ -58,7 +58,7 @@ function getRandomInt(min, max) {
 
 
 let func;
-func = setInterval(monitor, 1000);
+func = setInterval(monitor, getRandomInt(40, 80));
 
 
 
