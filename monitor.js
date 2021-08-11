@@ -38,7 +38,7 @@ function monitor() {
   // const code ={};
   // code.code = 1;
 
-  if (code.code === 0 || code2.code === 0) {
+  if (code1.code === 0 || code2.code === 0) {
     console.log('not found');
   } else {
     console.log("found!");
