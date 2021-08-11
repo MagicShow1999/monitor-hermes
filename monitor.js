@@ -33,17 +33,17 @@ function monitor() {
     -H 'accept-language: en-US,en;q=0.9' \
     --compressed > out.txt`)
 
-  const code = shell.exec("grep -q \"We’re sorry. The page you were looking for no longer exists.\" out.txt");
+  const code1 = shell.exec("grep -q \"We’re sorry. The page you were looking for no longer exists.\" out.txt");
+  const code2 = shell.exec("grep -q \"Oops ! The selected object is no longer available.\" out.txt");
   // const code ={};
   // code.code = 1;
 
-  if (code.code === 1) {
+  if (code.code === 0 || code2.code === 0) {
+    console.log('not found');
+  } else {
     console.log("found!");
     sendEmail();
     clearInterval(func);
-
-  } else {
-    console.log('not found');
   }
   
 }
